@@ -39,4 +39,11 @@
 /* Gray-Teal */
 .gray-teal {
   background-color: #e9f2f2;
+  background-color: #e9f2f277;
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

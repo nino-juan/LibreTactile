@@ -14,69 +14,187 @@
     <link rel="stylesheet" href="css/LTBrand.css" />
   </head>
   <body>
-    <script src="" async defer></script>
     <!--[if lt IE 7]>
       <p class="browsehappy">
         You are using an <strong>outdated</strong> browser. Please
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
-    <nav>
+    <!-- RESPONSIVE NAV BAR  -->
+    <div id="navBar"></div>
+    <script>
+      let navBar = `
+       <nav>
       <ul>
-        <li><strong>LibreTactile</strong></li>
+        <li></li>
+        <li>
+          <img
+            id="favicon"
+            src="/img/libre-2.min.svg"
+            onerror="this.onerror=null; this.src='/img/LibreTactile-96.png'"
+          />
+        </li>
+        <li>
+          <strong>LibreTactile</strong>
+        </li>
       </ul>
       <ul>
-        <li><a href="/index.html">Home</a></li>
+        <li>
+          <a href="/index.html"
+            ><u><strong>Home</strong></u></a
+          >
+        </li>
         <li><a href="/about.html">About</a></li>
         <li><a href="/projects.html">Projects</a></li>
         <li><a href="/index.html#news">News</a></li>
         <li><a href="/faq.html">FAQ</a></li>
         <li><a href="/contact.html">Contact</a></li>
+        <li></li>
+        <li></li>
       </ul>
     </nav>
+      `;
+
+      smallNavBar = `
+
+      <nav>
+      <ul>
+        <li></li>
+        <li>
+          <img
+            id="favicon"
+            src="/img/libre-2.min.svg"
+            onerror="this.onerror=null; this.src='/img/LibreTactile-96.png'"
+          />
+        </li>
+        <li>
+          <strong>LibreTactile</strong>
+        </li>
+      </ul>
+      <ul>
+        <details role="list">
+          <summary aria-haspopup="listbox">MENU</summary>
+          <ul role="listbox">
+            <li>
+              <a href="/index.html"
+                ><u><strong>Home</strong></u></a
+              >
+            </li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/index.html#news">News</a></li>
+            <li><a href="/faq.html">FAQ</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </details>
+
+        <li></li>
+        <li></li>
+      </ul>
+    </nav>
+    `;
+      // Create a condition that targets viewports at least 768px wide
+      const mediaQuery = window.matchMedia("(min-width: 768px)");
+
+      function rebuildNavBar(e) {
+        if (e.matches) {
+          document.getElementById("navBar").innerHTML = navBar;
+        } else {
+          document.getElementById("navBar").innerHTML = smallNavBar;
+        }
+      }
+
+      // Register event listener
+      mediaQuery.addListener(rebuildNavBar);
+
+      // Initial check
+      rebuildNavBar(mediaQuery);
+    </script>
     <main class="container">
       <div class="grid">
         <div>
           <h2>Touching the digital.</h2>
-          <h4>
-            LibreTactile is an open organization concerned with equitable
-            researching, developing, distributing and supporting open-source
-            tactile technologies for human-computer interaction.
-          </h4>
+          <div class="container">
+            <br />
+            <br />
+            <p>
+              <strong>LibreTactile</strong>
+              is an organization dedicated to researching, developing,
+              distributing and supporting
+              <strong> open-source tactile technologies</strong> for
+              human-computer interaction.
+            </p>
+            <br />
+            <div class="centered-container">
+              <a href="/projects.html" role="button">See our projects</a>
+            </div>
+          </div>
         </div>
-        <div>2</div>
+        <div>
+          <img
+            src="/img/hero-square.png"
+            alt="Illustration of a person touching the digital. Flat design style."
+          />
+        </div>
       </div>
     </main>
     <section class="container">
-      <img
-        src="C:/Users/shere/OneDrive/Documents/code/jn-libretactile/LibreTactile/img/connecting.png"
-        alt="Illustration of three lines coming together into a single central point."
-        width="300"
-        height="200"
-      />
-      <h4 align="center">
-        Connecting academic, opensource and user communities for the equitable
-        design of tactile technologies.
-      </h4>
+      <div class="grid">
+        <div>
+          <div class="centered-container">
+            <img
+              src="/img/connecting.png"
+              alt="Illustration of three lines coming together into a single central point."
+            />
+          </div>
+
+          <div>
+            <br />
+            <br />
+            <p>
+              Connecting <strong>academic</strong>,
+              <strong>opensource</strong> and <strong>user</strong> communities
+              for the benefit of <u>everyone</u>.
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="centered-container">
+            <img
+              src="/img/equitable.png"
+              alt="Illustration of three lines coming together into a single central point."
+            />
+          </div>
+
+          <div>
+            <br />
+            <br />
+            <p>
+              Solutions that include and meet the
+              <strong>needs of equity-deserving </strong>groups.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
+
     <section class="container gray-teal">
       <div class="grid">
         <div>
-          <h2>Latest Updates</h2>
-          <details>
-            <summary>Launch of LibreTactile page</summary>
-            <p>…</p>
-          </details>
-          <details>
-            <summary>Tomat project update: end of experimental phase</summary>
-            <p>…</p>
-          </details>
-          <details>
-            <summary>Tomat project update: restart after covid!</summary>
-            <p>…</p>
-          </details>
+          <h2 id="news">Latest Updates</h2>
+          <p>…Launch of LibreTactile page</p>
+
+          <p>…Tomat project update: end of experimental phase</p>
+
+          <p>…Tomat project update: restart after covid!</p>
         </div>
-        <div>2</div>
+
+        <div>
+          <img
+            src="/img/news.jpg"
+            alt="Illustration of three lines coming together into a single central point."
+          />
+        </div>
       </div>
     </section>
     <!--<h1>Home!</h1>
