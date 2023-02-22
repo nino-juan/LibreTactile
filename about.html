@@ -7,25 +7,84 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>LibreTactile</title>
+    <meta name="author" content="Sheri Ochoa" />
+    <meta name="designer" content="Sheri Ochoa" />
+    <meta property="og:title" content="LibreTactile.org Website - About Page" />
+    <meta
+      property="og:description"
+      content="LibreTactile.org Website - About Page"
+    />
+    <!--  UNcomment here and add urls for og properties -->
+    <meta property="og:url" content="https://www.libretactile.org/" />
+    <meta
+      property="og:image"
+      content="https://www.libretactile.org/Icon-192.png"
+    />
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="LibreTactile" />
+    <link rel="apple-touch-icon" href="Icon-192.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <meta name="description" content="LibreTactile organization About Page." />
+    <title>About LibreTactile</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/pico.min.css" />
     <link rel="stylesheet" href="css/LTBrand.css" />
   </head>
   <body>
-    <script src="" async defer></script>
-
     <!--[if lt IE 7]>
       <p class="browsehappy">
         You are using an <strong>outdated</strong> browser. Please
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
-
-    <nav>
+    <a href="#main-content" class="skip-navigation">Skip to main content</a>
+    <!-- RESPONSIVE NAV BAR  -->
+    <div id="navBar"></div>
+    <script>
+      let navBar = `
+       <nav class="desktop-navbar">
+      <ul >
+       
+        <li>
+          <img
+          
+            id="favicon"
+            src="/img/libre-2.min.svg"
+            onerror="this.onerror=null; this.src='/img/LibreTactile-96.png'"
+          />
+        </li>
+        <li>
+          <strong>LibreTactile</strong>
+        </li>
+      </ul>
       <ul>
-        <li></li>
+        <li>
+          <a class="hover-highlight" href="/index.html"
+            >Home</a
+          >
+        </li>
+        <li><a class="hover-highlight" href="/about.html"><u><strong>About</a></u></strong></li>
+        <li><a class="hover-highlight" href="/projects.html">Projects</a></li>
+        <li><a class="hover-highlight" href="/index.html#news">News</a></li>
+        <li><a class="hover-highlight" href="/faq.html">FAQ</a></li>
+        <li><a class="hover-highlight" href="/contact.html">Contact</a></li>
+      
+      </ul>
+    </nav>
+      `;
+
+      smallNavBar = `
+
+      <nav class="small-navbar">
+      <ul>
+        
         <li>
           <img
             id="favicon"
@@ -43,92 +102,157 @@
           <ul role="listbox">
             <li>
               <a href="/index.html"
-                ><u><strong>Home</strong></u></a
+                >Home</a
               >
             </li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/projects.html">Projects</a></li>
-            <li><a href="/index.html#news">News</a></li>
-            <li><a href="/faq.html">FAQ</a></li>
-            <li><a href="/contact.html">Contact</a></li>
+            <li><a class="hover-highlight" href="/about.html"><u><strong>About</u></strong></a></li>
+            <li><a class="hover-highlight" href="/projects.html">Projects</a></li>
+            <li><a class="hover-highlight" href="/index.html#news">News</a></li>
+            <li><a class="hover-highlight" href="/faq.html">FAQ</a></li>
+            <li><a class="hover-highlight" href="/contact.html">Contact</a></li>
           </ul>
         </details>
-
-        <li></li>
       </ul>
     </nav>
-    <h2>LibreTactile story</h2>
-    <br />
-    <p>
-      As part of my (Juan Nino) PhD research on equitable opensource hci tech
-      development, we are developing an assistive technology to help visually
-      impaired people navigate the internet. We weren't able to find simple,
-      affordable and open source tactile interfaces for our project, so we
-      decided to create our own and open source it to enable more people to
-      develop tactile interfaces for assistive technology or any other field
-      (gaming, XR, VR neuro-rehab, etc). Because such a task requires the
-      resources and expertise from different fields, we decided to create
-      LibreTactile to orchestrate these efforts.
-    </p>
+    `;
+      // small screen breakpoint
+      const mediaQuery = window.matchMedia("(min-width: 768px)");
 
-    <p>
-      We believe in the power, flexibility, innovation, and resilience that
-      diversity brings into communities. So we invite people from different
-      backgrounds, nationalities, and interests (including assistive technology,
-      UX/rehabilitation research, consumer electronics, designers, arts, XR, and
-      gaming) to benefit from and contribute to our mission.
-    </p>
-    <h2>Mission</h2>
-    <p>
-      To connect researchers, developers, users, and enthusiasts of tactile
-      technology from different fields for the equitable research, development,
-      distribution and support of open source tactile technologies for
-      human-computer interaction.
-    </p>
+      function rebuildNavBar(e) {
+        if (e.matches) {
+          document.getElementById("navBar").innerHTML = navBar;
+        } else {
+          document.getElementById("navBar").innerHTML = smallNavBar;
+        }
+      }
 
-    <h2>Vision</h2>
-    <p>Touching the digital.</p>
-    <h2>The team</h2>
-    <p>Juan Nino MA - Ph.D. student at Laval University in Quebec.</p>
-    <p>Jocelyne Kiss Ph.D. - Associate Professor of Arts and Technologies</p>
-    <p>
-      Frédérique Poncet ERG PhD Institutional Researcher,
-      Lethbridge-Layton-Mackay Rehabilitation Centre (LLMRC)
-    </p>
-    <p>
-      Walter Wittich Ph.D. FAAO CLVT - Associate Professor, School of Optometry
-    </p>
-    <p>
-      Geoffrey Edwards - Professeur titulaire Faculté de foresterie, géographie
-      et géomatique, Département des sciences géomatiques / Université Laval
-    </p>
-    <p>
-      Ernesto Morales PhD - Associate professor, Faculté de Médecine,
-      Département de réadaptation / Université Laval
-    </p>
-    <p>
-      France Picard, principal partner | Chef de service de la recherche, de
-      l’innovation et du secteur de l’adaptation de l’information et médias
-      substituts, Institut Nazareth et Louis-Braille, Direction des programmes
-      déficiences (DI, TSA, DP et DV) du CISSS de la Montérégie-Centre
-    </p>
-    <p>
-      Geneviève Chabot, principal partner| Rehabilitation Assistant Director,
-      Centre de réadaptation Lethbrige-Layton-Mackay (CRLLM), Direction de la
-      réadaptation et des services multidisciplinaires, CIUSSS Centre-Ouest
-    </p>
-    <p></p>
-    <p>
-      Pascale Dussault, partner | Executive Director, Regroupement des aveugles
-      et amblyopes du Montréal Métropolitain (RAAMM)
-    </p>
-    <p>
-      Cher Tieng Ting, Research assistant: MSc. in Vision Science - Low Vision
-      Concentration - Universite de Montreal Canada
-    </p>
-    <p>
-      Romain Picot, Research assistant: M. Sc. student at Créteil university, OT
-      - France
-    </p>
+      // Register event listener
+      mediaQuery.addListener(rebuildNavBar);
+
+      // Initial check
+      rebuildNavBar(mediaQuery);
+    </script>
+    <main id="main-content" class="container">
+      <h2>Hi, we’re <strong>LibreTactile!</strong></h2>
+      <br />
+      <p>
+        We bring together researchers, developers, users, and enthusiasts of
+        tactile technology from various fields to promote equitable research,
+        development, distribution, and support of open-source tactile
+        technologies for human-computer interaction.
+      </p>
+
+      <div class="centered-container">
+        <a href="/faq.html#join-our-efforts" role="button">Join our efforts</a>
+      </div>
+    </main>
+    <section class="container gray-teal">
+      <h2>A little about our history:</h2>
+      <br />
+      <div class="grid">
+        <div>
+          <p>
+            As part of my PhD research on equitable open-source HCI tech
+            development, I lead a
+            <a
+              href="https://societeinclusive.ca/projets/dispositif-assistance-navigation/"
+              >project</a
+            >
+            to develop an assistive technology that helps visually impaired
+            people navigate the internet. <a href="#team">We</a> faced a
+            challenge in finding simple, affordable, and open-source tactile
+            interfaces for our project, so we decided to create our own and make
+            it open-source. This would
+            <i>enable more people to develop tactile interfaces</i> for
+            assistive technology, as well as other fields such as gaming, XR, VR
+            neuro-rehab, etc. Given that this task required resources and
+            expertise from different fields, we founded LibreTactile to bring
+            together and orchestrate these efforts.
+          </p>
+
+          <p>
+            We believe in the power, flexibility, innovation, and resilience
+            that diversity brings to communities. As such, we invite individuals
+            from different backgrounds, nationalities, and interests, including
+            those in assistive technology, user experience / rehabilitation
+            research, consumer electronics, design, arts, XR, and gaming, to
+            both benefit from and contribute to our mission.
+          </p>
+        </div>
+        <div class="centered-container">
+          <img
+            src="/img/libre-2.min.svg"
+            width="450"
+            onerror="this.onerror=null; this.src='/img/Icon-192.png'"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="container">
+      <h2 id="team">The team</h2>
+      <p>
+        <a href="https://www.juannino.dev/"><strong>Juan Nino MA</strong></a> -
+        Ph.D. student at Laval University in Quebec.
+      </p>
+      <p>
+        <a
+          href="https://www.design.ulaval.ca/personnel/professeurs/jocelyne-kiss"
+          ><strong>Jocelyne Kiss Ph.D.</strong></a
+        >
+        - Associate Professor of Arts and Technologies
+      </p>
+      <p>
+        <a href="https://crir.ca/en/member/frederique-poncet-erg-ph-d/"
+          ><strong>Frédérique Poncet ERG PhD</strong></a
+        >
+        - Institutional Researcher, Lethbridge-Layton-Mackay Rehabilitation
+        Centre (LLMRC)
+      </p>
+      <p>
+        <a href="https://www.cirris.ulaval.ca/en/researchers/ernesto-morales/"
+          ><strong>Walter Wittich Ph.D. FAAO CLVT</strong></a
+        >
+        - Associate Professor, School of Optometry
+      </p>
+      <p>
+        <a href="https://www.scg.ulaval.ca/geoffrey-edwards"
+          ><strong>Geoffrey Edwards </strong></a
+        >- Professeur titulaire Faculté de foresterie, géographie et géomatique,
+        Département des sciences géomatiques / Université Laval
+      </p>
+      <p>
+        <a href="https://www.opto.umontreal.ca/wittichlab/en/index.html"
+          ><strong>Ernesto Morales PhD</strong></a
+        >
+        - Associate professor, Faculté de Médecine, Département de réadaptation
+        / Université Laval
+      </p>
+      <!-- CONFIRM THEIR CONSENT AS PARTNERS -->
+      <!--  <p>
+        <a href=""><strong>France Picard, principal partner </strong></a> | Chef de service de la recherche, de
+        l’innovation et du secteur de l’adaptation de l’information et médias
+        substituts, Institut Nazareth et Louis-Braille, Direction des programmes
+        déficiences (DI, TSA, DP et DV) du CISSS de la Montérégie-Centre
+      </p>
+      <p>
+        <a href=""><strong>Geneviève Chabot, principal partner</strong></a>| Rehabilitation Assistant Director,
+        Centre de réadaptation Lethbrige-Layton-Mackay (CRLLM), Direction de la
+        réadaptation et des services multidisciplinaires, CIUSSS Centre-Ouest
+      </p>
+      
+      <p>
+        <a href=""><strong>Pascale Dussault, partner </strong></a>| Executive Director, Regroupement des
+        aveugles et amblyopes du Montréal Métropolitain (RAAMM)
+      </p> -->
+      <p>
+        <a href=""><strong>Cher Tieng Ting</strong></a
+        >, Research assistant: MSc. in Vision Science - Low Vision Concentration
+        - Universite de Montreal Canada
+      </p>
+      <p>
+        <a href=""><strong>Romain Picot</strong></a
+        >, Research assistant: M. Sc. student at Créteil university, OT - France
+      </p>
+    </section>
   </body>
 </html>

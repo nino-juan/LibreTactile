@@ -38,12 +38,52 @@
 
 /* Gray-Teal */
 .gray-teal {
-  background-color: #e9f2f2;
   background-color: #e9f2f277;
 }
+/* ------------------- */
 
+/* Centered container */
 .centered-container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+/* News container */
+.news-container {
+  display: flex;
+  background-color: #e9f2f277;
+  align-items: center;
+  margin-left: 15%;
+  margin-top: 10%;
+}
+/* highlight when hovering */
+.hover-highlight:hover {
+  background-color: #00897b30;
+}
+
+/* navbar margins */
+.desktop-navbar {
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+.small-navbar {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+/* skip navigation link*/
+
+.skip-navigation {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-navigation:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
 }

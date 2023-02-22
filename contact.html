@@ -7,14 +7,141 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>LibreTactile</title>
+    <meta name="author" content="Sheri Ochoa" />
+    <meta name="designer" content="Sheri Ochoa" />
+    <meta
+      property="og:title"
+      content="LibreTactile.org Website - Contact Us Page"
+    />
+    <meta
+      property="og:description"
+      content="Contact page of LibreTactile organization."
+    />
+    <!--  UNcomment here and add urls for og properties -->
+    <meta property="og:url" content="https://www.libretactile.org/" />
+    <meta
+      property="og:image"
+      content="https://www.libretactile.org/Icon-192.png"
+    />
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="LibreTactile" />
+    <link rel="apple-touch-icon" href="Icon-192.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <meta
+      name="description"
+      content="Contact page of LibreTactile organization."
+    />
+    <title>Contact LibreTactile</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/pico.min.css" />
     <link rel="stylesheet" href="css/LTBrand.css" />
   </head>
   <body>
-    <script src="" async defer></script>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <a href="#main-content" class="skip-navigation">Skip to main content</a>
+    <!-- RESPONSIVE NAV BAR  -->
+    <div id="navBar"></div>
+    <script>
+      let navBar = `
+       <nav class="desktop-navbar">
+      <ul >
+        <li ></li>
+        <li>
+          <img
+          
+            id="favicon"
+            src="/img/libre-2.min.svg"
+            onerror="this.onerror=null; this.src='/img/LibreTactile-96.png'"
+          />
+        </li>
+        <li>
+          <strong>LibreTactile</strong>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a class="hover-highlight" href="/index.html"
+            >Home</a
+          >
+        </li>
+        <li><a class="hover-highlight" href="/about.html">About</a></li>
+        <li><a class="hover-highlight" href="/projects.html">Projects</a></li>
+        <li><a class="hover-highlight" href="/index.html#news">News</a></li>
+        <li><a class="hover-highlight" href="/faq.html">FAQ</a></li>
+        <li><a class="hover-highlight" href="/contact.html"><u><strong>Contact</u></strong></a></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </nav>
+      `;
+
+      smallNavBar = `
+
+      <nav class="small-navbar">
+      <ul>
+        <li></li>
+        <li>
+          <img
+            id="favicon"
+            src="/img/libre-2.min.svg"
+            onerror="this.onerror=null; this.src='/img/LibreTactile-96.png'"
+          />
+        </li>
+        <li>
+          <strong>LibreTactile</strong>
+        </li>
+      </ul>
+      <ul>
+        <details role="list">
+          <summary aria-haspopup="listbox">MENU</summary>
+          <ul role="listbox">
+            <li>
+              <a href="/index.html"
+                >Home</a
+              >
+            </li>
+            <li><a class="hover-highlight" href="/about.html">About</a></li>
+            <li><a class="hover-highlight" href="/projects.html">Projects</a></li>
+            <li><a class="hover-highlight" href="/index.html#news">News</a></li>
+            <li><a class="hover-highlight" href="/faq.html">FAQ</a></li>
+            <li><a class="hover-highlight" href="/contact.html"><u><strong>Contact</u></strong></a></li>
+          </ul>
+        </details>
+
+        <li></li>
+        <li></li>
+      </ul>
+    </nav>
+    `;
+      // small screen breakpoint
+      const mediaQuery = window.matchMedia("(min-width: 768px)");
+
+      function rebuildNavBar(e) {
+        if (e.matches) {
+          document.getElementById("navBar").innerHTML = navBar;
+        } else {
+          document.getElementById("navBar").innerHTML = smallNavBar;
+        }
+      }
+
+      // Register event listener
+      mediaQuery.addListener(rebuildNavBar);
+
+      // Initial check
+      rebuildNavBar(mediaQuery);
+    </script>
 
     <!--[if lt IE 7]>
       <p class="browsehappy">
@@ -22,11 +149,8 @@
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
-    <h1>Contact!</h1>
-    Menu
-    <br />
-    {About , Projects, News, FAQ, Contact}
-    <h2>...</h2>
+
+    <main id="main-content" class="container"></main>
 
     <p>
       If you need help building or modifying one of our projects, or if you
@@ -49,8 +173,5 @@
     <br />
 
     <p>github</p>
-    <p>linked in</p>
-    <p>twitter</p>
-    <br />
   </body>
 </html>

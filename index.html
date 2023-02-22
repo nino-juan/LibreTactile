@@ -7,8 +7,34 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="author" content="Sheri Ochoa" />
+    <meta name="designer" content="Sheri Ochoa" />
+    <meta property="og:title" content="LibreTactile.org Website" />
+    <meta
+      property="og:description"
+      content="Landing page of LibreTactile organization."
+    />
+    <!--  UNcomment here and add urls for og properties -->
+    <meta property="og:url" content="https://www.libretactile.org/" />
+    <meta
+      property="og:image"
+      content="https://www.libretactile.org/Icon-192.png"
+    />
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="LibreTactile" />
+    <link rel="apple-touch-icon" href="Icon-192.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
     <title>LibreTactile</title>
-    <meta name="description" content="" />
+    <meta
+      name="description"
+      content="Landing page of LibreTactile organization."
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/pico.min.css" />
     <link rel="stylesheet" href="css/LTBrand.css" />
@@ -20,15 +46,17 @@
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
+    <a href="#main-content" class="skip-navigation">Skip to main content</a>
     <!-- RESPONSIVE NAV BAR  -->
     <div id="navBar"></div>
     <script>
       let navBar = `
-       <nav>
-      <ul>
-        <li></li>
+       <nav class="desktop-navbar">
+      <ul >
+        <li ></li>
         <li>
           <img
+          
             id="favicon"
             src="/img/libre-2.min.svg"
             onerror="this.onerror=null; this.src='/img/LibreTactile-96.png'"
@@ -40,15 +68,15 @@
       </ul>
       <ul>
         <li>
-          <a href="/index.html"
+          <a class="hover-highlight" href="/index.html"
             ><u><strong>Home</strong></u></a
           >
         </li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/projects.html">Projects</a></li>
-        <li><a href="/index.html#news">News</a></li>
-        <li><a href="/faq.html">FAQ</a></li>
-        <li><a href="/contact.html">Contact</a></li>
+        <li><a class="hover-highlight" href="/about.html">About</a></li>
+        <li><a class="hover-highlight" href="/projects.html">Projects</a></li>
+        <li><a class="hover-highlight" href="/index.html#news">News</a></li>
+        <li><a class="hover-highlight" href="/faq.html">FAQ</a></li>
+        <li><a class="hover-highlight" href="/contact.html">Contact</a></li>
         <li></li>
         <li></li>
       </ul>
@@ -57,7 +85,7 @@
 
       smallNavBar = `
 
-      <nav>
+      <nav class="small-navbar">
       <ul>
         <li></li>
         <li>
@@ -80,11 +108,11 @@
                 ><u><strong>Home</strong></u></a
               >
             </li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/projects.html">Projects</a></li>
-            <li><a href="/index.html#news">News</a></li>
-            <li><a href="/faq.html">FAQ</a></li>
-            <li><a href="/contact.html">Contact</a></li>
+            <li><a class="hover-highlight" href="/about.html">About</a></li>
+            <li><a class="hover-highlight" href="/projects.html">Projects</a></li>
+            <li><a class="hover-highlight" href="/index.html#news">News</a></li>
+            <li><a class="hover-highlight" href="/faq.html">FAQ</a></li>
+            <li><a class="hover-highlight" href="/contact.html">Contact</a></li>
           </ul>
         </details>
 
@@ -93,7 +121,7 @@
       </ul>
     </nav>
     `;
-      // Create a condition that targets viewports at least 768px wide
+      // small screen breakpoint
       const mediaQuery = window.matchMedia("(min-width: 768px)");
 
       function rebuildNavBar(e) {
@@ -110,7 +138,7 @@
       // Initial check
       rebuildNavBar(mediaQuery);
     </script>
-    <main class="container">
+    <main id="main-content" class="container">
       <div class="grid">
         <div>
           <h2>Touching the digital.</h2>
@@ -144,7 +172,7 @@
           <div class="centered-container">
             <img
               src="/img/connecting.png"
-              alt="Illustration of three lines coming together into a single central point."
+              alt="Illustration of three hands building a logo of accessibility and universal access."
             />
           </div>
 
@@ -154,15 +182,17 @@
             <p>
               Connecting <strong>academic</strong>,
               <strong>opensource</strong> and <strong>user</strong> communities
-              for the benefit of <u>everyone</u>.
+              to meet the needs of <u>equity-deserving groups</u>.
             </p>
           </div>
         </div>
         <div>
           <div class="centered-container">
             <img
-              src="/img/equitable.png"
-              alt="Illustration of three lines coming together into a single central point."
+              src="/img/ripples.png"
+              alt="Illustration of a central point sending ripples to two external points."
+              width="200"
+              height="200"
             />
           </div>
 
@@ -170,8 +200,8 @@
             <br />
             <br />
             <p>
-              Solutions that include and meet the
-              <strong>needs of equity-deserving </strong>groups.
+              Driving innovations with
+              <strong>interdisciplinary impact</strong>.
             </p>
           </div>
         </div>
@@ -182,64 +212,126 @@
       <div class="grid">
         <div>
           <h2 id="news">Latest Updates</h2>
-          <p>…Launch of LibreTactile page</p>
-
-          <p>…Tomat project update: end of experimental phase</p>
-
-          <p>…Tomat project update: restart after covid!</p>
+          <div class="news-container hover-highlight">
+            <p>
+              Launch of <strong>NEW</strong> LibreTactile Website
+              <a href="https://github.com/LibreTactile/website">
+                ... read more</a
+              >
+            </p>
+          </div>
+          <div class="news-container hover-highlight">
+            <p>
+              <u>Tomat Project Update</u>: Experimental phase
+              <strong> completed!</strong>
+              <a
+                href="https://societeinclusive.ca/projets/dispositif-assistance-navigation/"
+              >
+                ... read more</a
+              >
+            </p>
+          </div>
+          <div class="news-container hover-highlight">
+            <p>
+              <u>Tomat Project Update</u>: Restart of project after COVID-19!
+              <a
+                href="https://societeinclusive.ca/projets/dispositif-assistance-navigation/"
+              >
+                ... read more</a
+              >
+            </p>
+          </div>
         </div>
 
-        <div>
-          <img
-            src="/img/news.jpg"
-            alt="Illustration of three lines coming together into a single central point."
-          />
+        <div class="centered-container">
+          <img src="/img/news.png" alt="Illustration of a newspaper." />
         </div>
       </div>
     </section>
-    <!--<h1>Home!</h1>
-    Menu
-    <br />
-    {About , Projects, News, FAQ, Contact}
-    <h2>Touching the digital.</h2>
-    <br />
-    <h4>
-      LibreTactile is an open organization concerned with equitable researching,
-      developing, distributing and supporting open-source tactile technologies
-      for human-computer interaction.
-    </h4>
-  
 
-    <br />
-    <h3>
-      Connecting academic, opensource and user communities for the equitable
-      design of tactile technologies.
-    </h3>
+    <section class="container">
+      <h2>Projects' feedback:</h2>
+      <div class="grid">
+        <article>
+          <p>
+            "Having something tangible to interact with makes much more sense to
+            me, it helps me to understand it [the webpage] better."<br /><br />
+            <i>-Elderly Visually Impaired Co-Designer of Tomat Navigator</i>
+          </p>
+        </article>
+        <article class="centered-container">
+          <p>
+            “It [<a href="/projects.html">tomat navigator</a>] helps the
+            imagination to have something concrete at hand.”<br /><br /><i
+              >-Blind Co-Designer of Tomat Navigator</i
+            >
+          </p>
+        </article>
+        <article class="centered-container">
+          <p>
+            “Touching has always been my way of learning things, I am using my
+            hands for everything.”<br /><br />
+            <i
+              >-Blind Assistive Technology Expert and Co-Designer of Tomat
+              Navigator</i
+            >
+          </p>
+        </article>
+      </div>
+    </section>
+    <section class="container">
+      <h2>Partners from recent projects:</h2>
+      <div class="grid">
+        <div class="centered-container">
+          <img
+            src="/img/partners/ulaval.png"
+            alt="Logo of Universite Laval."
+            width="200"
+          />
+        </div>
+        <div class="centered-container">
+          <img
+            src="/img/partners/cirris.png"
+            alt="Logo of CIRRIS."
+            width="200"
+          />
+        </div>
 
-    <h2 id="news">Latest News</h2>
-    ]
-    <h5>Launch of LibreTactile page</h5>
-    <h5>Tomat project update: end of experimental phase</h5>
-    <h5>Tomat project update: restart after covid!</h5>
--->
-    <h2>Blind user's feedback of our projects:</h2>
-    <p>
-      “Having something to touch makes a lot more sense to me to make it
-      possible to understand it. Touching has always been my way of learning
-      things, I am using my hands for everything.”
-    </p>
-    <p>“...It helps the imagination to have something concrete at hand.”</p>
-    <p>
-      “... helps to create a good mental structure of the webpage, which is very
-      important for how I navigate the internet.”
-    </p>
+        <div class="centered-container">
+          <img
+            src="/img/partners/si.png"
+            alt="Logo of Inclusive Society."
+            width="200"
+          />
+        </div>
 
-    <p>Partners</p>
-    <img
-      src="/img/partners.jpg"
-      alt="Logo of our partners."
-      width="300"
-      height="200"
-    />
+        <div class="centered-container">
+          <img src="/img/partners/crir.png" alt="Logo of CRIR." width="200" />
+        </div>
+      </div>
+      <div class="grid">
+        <div class="centered-container">
+          <img
+            src="/img/partners/mab.png"
+            alt="Logo of MAB-Mackay."
+            width="200"
+          />
+        </div>
+        <div class="centered-container">
+          <img src="/img/partners/inlb.png" alt="Logo of INLB." width="200" />
+        </div>
+        <div class="centered-container">
+          <img
+            src="/img/partners/udem.png"
+            alt="Logo of Universite de Montreal."
+            width="200"
+          />
+        </div>
+
+        <div class="centered-container">
+          <img src="/img/partners/raamm.png" alt="Logo of RAAMM." width="200" />
+        </div>
+      </div>
+    </section>
   </body>
 </html>
