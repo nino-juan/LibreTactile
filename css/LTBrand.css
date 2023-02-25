@@ -61,15 +61,15 @@
   background-color: #00897b30;
 }
 
-/* navbar margins */
+/* navbar margins 
 .desktop-navbar {
-  margin-left: 4rem;
-  margin-right: 4rem;
+  margin-left: 8rem;
+  margin-right: 8rem;
 }
 .small-navbar {
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
+  margin-left: 3rem;
+  margin-right: 3rem;
+} */
 
 /* skip navigation link*/
 
@@ -86,4 +86,14 @@
   width: auto;
   height: auto;
   overflow: visible;
+}
+
+/* Styles for screens wider than 992 pixels */
+@media (min-width: 992px) {
+  /* CSS rules for large screens go here */
+  body {
+    width: 100%;
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
 }
